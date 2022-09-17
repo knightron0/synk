@@ -1,0 +1,119 @@
+body{
+    /*background-image: linear-gradient(to right, #c7d8e8, #fde6e7);*/
+    background-image: linear-gradient(to right, #afbdcb, #decacb);
+    font-family: Segoe UI;
+}
+
+.loginWrapper{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -41%);
+}
+
+.loginHeader{
+    text-align: center;
+}
+
+.loginFav{
+    height: 200px;
+    width: 200px;
+}
+
+.loginText{
+    height: 135px;
+    width: 300px;
+}
+
+.loginBox{
+    text-align: center;
+    background-color: white;
+    width: 500px;
+    border-radius: 25px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.loginBox h1{
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.loginInput{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.loginInput input{
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #000000;
+    position: relative;
+    width: 80%;
+    height: 45px;
+    /*background: linear-gradient(to right, #e2dfe8, #f7e5e8);*/
+    background: #eaf1f7;
+    border-radius: 25px;
+    padding: 0 30px 0 30px;
+    font-family: Segoe UI;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.loginInput input:focus {
+  width: 85%;
+}
+
+.loginBox button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 90%;
+  height: 50px;
+  background-color: #476783;
+  border-radius: 25px;
+  border-width: 0px;
+  margin: auto;
+  margin-top: 40px;
+
+  font-family: Segoe UI;
+  font-size: 18px;
+  font-weight: bold;
+  color: #efefef;
+  line-height: 1.2;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.loginBox button:hover {
+  background-color: #352359;
+  cursor: pointer;
+}
+
+.textToRight{
+    text-align: right;
+    margin-right: 35px;
+}
+
+.loginCreate{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.loginCreate a{
+    text-decoration: none;
+    color: #352359;
+    font-weight: bold;
+    font-size: 16px;
+}
