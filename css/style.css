@@ -1,53 +1,53 @@
-body{
+body {
     /*background-image: linear-gradient(to right, #c7d8e8, #fde6e7);*/
     background-image: linear-gradient(to right, #afbdcb, #decacb);
     font-family: Segoe UI;
 }
 
-.loginWrapper{
+.createAcc{
+    background-image: linear-gradient(to left, #afbdcb, #decacb);
+}
+
+.loginWrapper {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -41%);
+    transform: translate(-50%, -45%);
 }
 
-.loginHeader{
+.loginHeader {
     text-align: center;
 }
 
-.loginFav{
-    height: 200px;
-    width: 200px;
+.loginLogo {
+    height: 350px;
+    width: 350px;
+    margin-bottom: -50px;
 }
 
-.loginText{
-    height: 135px;
-    width: 300px;
-}
-
-.loginBox{
+.loginBox {
     text-align: center;
     background-color: white;
-    width: 500px;
+    width: 350px;
     border-radius: 25px;
     margin: auto;
-    padding-top: 50px;
-    padding-bottom: 40px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    padding-left: 17.5px;
+    padding-right: 17.5px;
 }
 
-.loginBox h1{
+.loginBox h1 {
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-.loginInput{
-    margin-top: 20px;
-    margin-bottom: 20px;
+.loginInput {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.loginInput input{
+.loginInput input {
     outline: none;
     border: none;
     font-size: 16px;
@@ -68,52 +68,76 @@ body{
 }
 
 .loginInput input:focus {
-  width: 85%;
+    width: 85%;
 }
 
-.loginBox button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  width: 90%;
-  height: 50px;
-  background-color: #476783;
-  border-radius: 25px;
-  border-width: 0px;
-  margin: auto;
-  margin-top: 40px;
+.loginBox button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 90%;
+    height: 50px;
+    background-color: #476783;
+    border-radius: 25px;
+    border-width: 0px;
+    margin: auto;
+    margin-top: 25px;
 
-  font-family: Segoe UI;
-  font-size: 18px;
-  font-weight: bold;
-  color: #efefef;
-  line-height: 1.2;
+    font-family: Segoe UI;
+    font-size: 18px;
+    font-weight: bold;
+    color: #efefef;
+    line-height: 1.2;
 
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .loginBox button:hover {
-  background-color: #352359;
-  cursor: pointer;
+    background-color: #352359;
+    cursor: pointer;
 }
 
-.textToRight{
+.textToRight {
     text-align: right;
-    margin-right: 35px;
+    margin-right: 20px;
+    margin-top: -5px;
 }
 
-.loginCreate{
-    margin-top: 15px;
+.loginCreate {
+    margin-top: 10px;
     text-align: center;
 }
 
-.loginCreate a{
+.loginCreate a {
     text-decoration: none;
     color: #352359;
     font-weight: bold;
     font-size: 16px;
+    position: relative;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.loginCreate a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #352359;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.loginCreate a:hover::before {
+    transform: scaleX(1);
 }
