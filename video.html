@@ -86,10 +86,10 @@
 <div id="description" class="basic-1">
     <div class="container">
         <a href="" class="btn-outline-sm ">Invite</a>
-        <img src="/images/user.svg" class="viewerCount">
+        <img src="images/user.svg" class="viewerCount">
         <a>|</a>
         <a>123829</a>
-        <a href="/index.html" class="alignRight">Home</a>
+        <a href="index.html" class="alignRight">Home</a>
         <br>
         <br>
         <div class="row">
@@ -97,7 +97,7 @@
 
             <div class="col-8">
                 <div class="video">
-                    <video controls src="/images/8mb.video-qRw-6YiyWOPG.mp4" class="vidBox"></video>
+                    <video controls src="images/8mb.video-qRw-6YiyWOPG.mp4" class="vidBox" id="videoElem"></video>
                 </div> <!-- end of image-container -->
             </div> <!-- end of col -->
             <div class="col-4">
@@ -111,27 +111,19 @@
                     
                 </div> <!-- end of text-container -->
                 <br>
-                <div class="card transcriptMargin">
+                <div class="card transcriptMargin" id="chatContainer">
                     <div class="card-header">
                         <h4>Chat</h2>
                     </div>
+
+                      <!--create chat input-->
                     
-                    <p>Insert chat here skljdlkasj dkalkdjasdl kajdlk;as jsdlk;asjdaskl djask;ljd alks;jd a.container {
-                        /* Optional - You can set a  min-height : whatever px; for reserving some space*/
-                        height: 200px; /* Fix a height here */
-                        overflow: auto; /* Optionally you can also use overflow: scroll; */
-                     };slkdj s;</p>
-
-                    <!--create chat input-->
-
-                    
-
 
                 </div> <!-- end of text-container -->
                 <div class="card">
                 <div class="input-group mb-3 chatBox card-footer">
-                    <input type="text" class="form-control" placeholder="Type your message here" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <a href=""><img src="/images/arrow-right.svg" class="form-control">
+                    <input type="text" class="form-control" placeholder="Type your message here" aria-label="Recipient's username" aria-describedby="basic-addon2" id="messageBox">
+                    <div id="sendMessage"><img src="images/arrow-right.svg" class="form-control"></div>
                 </div>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -153,5 +145,40 @@
     <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+
+    <script>
+        
+
+        const video = document.getElementById('videoElem');
+        const params = new URLSearchParams(document.location.search);
+        const roomCode = params.get("room");
+        const socket = io.connect("http://10.186.140.74:5000/");
+        
+        socket.emit("joinRoom", {code: roomCode});
+
+        video.addEventListener('play', (event) => {
+            console.log("video was played lmao");
+        });        
+
+        socket.on('chat_message', function(msg) {
+            console.log(msg)
+            const para = document.createElement("p");
+            const node = document.createTextNode(msg);
+            para.appendChild(node);
+            const par = document.getElementById("chatContainer");
+            par.appendChild(para);
+        });
+
+        video.addEventListener('pause', (event) => {
+            console.log("video was paused lmao");
+        });
+
+        document.getElementById("sendMessage").addEventListener("click", (event) => {
+            socket.emit('chat', {message: document.getElementById("messageBox").value, code: roomCode});
+        });  
+
+
+    </script>
 </body>
 </html>
