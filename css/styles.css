@@ -2342,3 +2342,53 @@ a:hover.back-to-top {
 	padding-left: 20px;
 
 }
+
+.mini-pad {
+	padding: 3px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	color: #5976fe;
+	background-color: white;
+	border-color: #5976fe;
+	border-width: 2px;
+}
+
+.mini-pad:hover, .mini-pad:focus, .mini-pad:active, .mini-pad.active, .open > .dropdown-toggle.mini-pad {
+	color: white;
+	background-color: #5976fe;
+	border-color: #5976fe;
+  }
+
+
+.filters {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+  }
+
+  .left-margin {
+	margin-left: 5px;
+  }
+
+  .textcolor{
+	color: #5976fe;
+  }
+
+  .keywords {
+	display: inline-block;
+	max-width: fit-content;
+	margin: 5px;
+	padding-top:5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white;
+	background-color: #476783;
+	border-radius: 15px;
+  }
+  
+  .bottom-margin {
+	margin-bottom: 5px;
+  }
