@@ -1,2 +1,2 @@
-# hw-hack
-our code for the hello world hackathon 2022.
+# synk.
+Purdue Hello World 2022 hackathon submission
