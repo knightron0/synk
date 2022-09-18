@@ -242,16 +242,16 @@
         const video = document.getElementById('videoElem');
         const params = new URLSearchParams(document.location.search);
         const roomCode = params.get("room");
+        const accName = params.get("account");
         const socket = io.connect("http://10.186.140.74:5000/");
-        
+
         socket.emit("joinRoom", {code: roomCode});
 
-        video.addEventListener('play', (event) => {
-            console.log("video was played lmao");
-        });        
+        document.getElementById("sendMessage").addEventListener("click", (event) => {
+            socket.emit('chat', {message: document.getElementById("messageBox").value, code: roomCode});
+        });  
 
         socket.on('chat_message', function(msg) {
-            console.log(msg)
             const para = document.createElement("p");
             const node = document.createTextNode(msg);
             para.appendChild(node);
@@ -259,14 +259,35 @@
             par.appendChild(para);
         });
 
-        video.addEventListener('pause', (event) => {
-            console.log("video was paused lmao");
+        video.addEventListener('play', (event) => {
+            console.log("play emit");
+            socket.emit('playPressed', {code: roomCode});
+        });        
+
+        socket.on('playPressed', function(msg) {
+            console.log("play received");
+            video.play();
         });
 
-        document.getElementById("sendMessage").addEventListener("click", (event) => {
-            socket.emit('chat', {message: document.getElementById("messageBox").value, code: roomCode});
-        });  
+        video.addEventListener('pause', (event) => {
+            console.log("pause emit");
+            socket.emit('pausePressed', {code: roomCode});
+        });
 
+        socket.on('pausePressed', function(msg) {
+            console.log("pause received");
+            video.pause();
+        });
+
+        // video.addEventListener('seeking', (event) => {
+        //     console.log("seek emit");
+        //     socket.emit('timeUpdate', {newTime: document.getElementById("videoElem").currentTime, code: roomCode, emitter: accName});
+        //     // document.getElementById("videoElem").play();
+        // });
+
+        // socket.on('timeUpdate', function(msg) {
+        //     document.getElementById("videoElem").currentTime = msg[0];     
+        // });
 
     </script>
 </body>
