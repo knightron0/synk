@@ -2290,9 +2290,29 @@ a:hover.back-to-top {
 
   .transcriptMargin {
 	padding: 15px;
+	height: 250px;
+	overflow: auto;
   }
   
   .viewerCount {
 
-	margin-left: 10px;
+	margin-left: 30px;
   }
+
+  .vidBox {
+	width: 100%;
+	height: auto;
+	border: 2px solid black;
+	border-radius: 2px;
+	margin: 0;
+  }
+
+  
+  .alignRight {
+	  float: right;
+	  margin-right: 10px;
+  }
+
+.chatBox {
+	position:static;
+}
