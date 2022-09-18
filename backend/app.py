@@ -7,7 +7,15 @@ socketio.init_app(app, cors_allowed_origins="*")
 
 @socketio.on('playPressed')
 def playPressed(message):
-    print(message)
+    socketio.emit("playPressed", "play the video", room=message["code"])
+
+@socketio.on('pausePressed')
+def pausePressed(message):
+    socketio.emit("pausePressed", "play the video", room=message["code"])
+
+@socketio.on('timeUpdate')
+def timeUpdate(message):
+    socketio.emit("timeUpdate", [message["newTime"], message["emitter"]], room=message["code"])
 
 @socketio.on('chat')
 def chat(message):
