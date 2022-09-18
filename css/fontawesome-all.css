@@ -931,7 +931,7 @@ readers do not read off random characters that represent icons */
   content: "\f51d"; }
 
 .fa-circle:before {
-  content: "\f111"; }
+  content: "\f111"; color: #5976fe;}
 
 .fa-circle-notch:before {
   content: "\f1ce"; }
@@ -1030,7 +1030,8 @@ readers do not read off random characters that represent icons */
   content: "\f0db"; }
 
 .fa-comment:before {
-  content: "\f075"; }
+  content: "\f075"; 
+}
 
 .fa-comment-alt:before {
   content: "\f27a"; }
@@ -1048,7 +1049,7 @@ readers do not read off random characters that represent icons */
   content: "\f4b3"; }
 
 .fa-comments:before {
-  content: "\f086"; }
+  content: "\f086"; color: white; }
 
 .fa-comments-dollar:before {
   content: "\f653"; }
@@ -4006,7 +4007,7 @@ readers do not read off random characters that represent icons */
   content: "\f287"; }
 
 .fa-user:before {
-  content: "\f007"; }
+  content: "\f007"; color: #fff;}
 
 .fa-user-alt:before {
   content: "\f406"; }
