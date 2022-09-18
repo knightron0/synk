@@ -141,3 +141,17 @@ body {
 .loginCreate a:hover::before {
     transform: scaleX(1);
 }
+
+.profileCard{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.profileCard p {
+    padding-left: 30px;
+}
+
+.profileCard a {
+    padding-left: 30px;
+}
